@@ -2,9 +2,7 @@ package mmh.jpastudentmmh.controller;
 
 import mmh.jpastudentmmh.model.Student;
 import mmh.jpastudentmmh.repositories.StudentRepository;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -28,6 +26,13 @@ public class StudentRestController {
     @GetMapping("/students/{name}")
     public List<Student> findAllByName(@PathVariable String name) {
         return studentRepository.findAllByName(name);
+    }
+
+    @PostMapping("/student")
+    @ResponseStatus
+    public Student postStudent(@RequestBody Student student) {
+        return studentRepository.save(student);
+
     }
 
 
