@@ -31,10 +31,19 @@ public class StudentRestController {
         return studentRepository.findAllByName(name);
     }
 
+//    @PostMapping("/student")
+//    @ResponseStatus(HttpStatus.CREATED)
+//    public Student postStudent(@RequestBody Student student) {
+//        return studentRepository.save(student);
+//
+//    }
+
     @PostMapping("/student")
     @ResponseStatus(HttpStatus.CREATED)
-    public Student postStudent(@RequestBody Student student) {
-        return studentRepository.save(student);
+    public Student postStudent() {
+        Student testStudent = new Student();
+        testStudent.setName("Luna");
+        return studentRepository.save(testStudent);
 
     }
 
