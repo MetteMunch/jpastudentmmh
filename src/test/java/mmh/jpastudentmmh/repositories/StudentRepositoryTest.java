@@ -28,7 +28,7 @@ class StudentRepositoryTest {
 
         //Act
         int actualSize = listOfStudents.size();
-        int expectedSize = 2;
+        int expectedSize = 3;
 
         //Assert
         assertEquals(expectedSize,actualSize);
