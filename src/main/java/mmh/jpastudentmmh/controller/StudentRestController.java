@@ -22,13 +22,13 @@ public class StudentRestController {
 
     @GetMapping("/students")
     public List<Student> students() {
+        postStudent();
         var obj = studentRepository.findAll();
         return obj;
     }
 
     @GetMapping("/students/{name}")
     public List<Student> findAllByName(@PathVariable String name) {
-        postStudent();
         return studentRepository.findAllByName(name);
     }
 
