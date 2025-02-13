@@ -28,6 +28,7 @@ public class StudentRestController {
 
     @GetMapping("/students/{name}")
     public List<Student> findAllByName(@PathVariable String name) {
+        postStudent();
         return studentRepository.findAllByName(name);
     }
 
